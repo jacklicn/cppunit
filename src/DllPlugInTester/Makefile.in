@@ -63,7 +63,7 @@ am_DllPlugInTester_OBJECTS = DllPlugInTester.$(OBJEXT) \
 	CommandLineParser.$(OBJEXT)
 DllPlugInTester_OBJECTS = $(am_DllPlugInTester_OBJECTS)
 DllPlugInTester_DEPENDENCIES =  \
-	$(top_builddir)/src/cppunit/libcppunit.la -ldl
+	$(top_builddir)/src/cppunit/libcppunit.la
 DllPlugInTester_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(DllPlugInTester_LDFLAGS) $(LDFLAGS) -o $@
@@ -236,7 +236,7 @@ DllPlugInTester_SOURCES = DllPlugInTester.cpp \
 	CommandLineParser.cpp
 
 DllPlugInTester_LDADD = \
-  $(top_builddir)/src/cppunit/libcppunit.la
+  $(top_builddir)/src/cppunit/libcppunit.la -ldl
 
 DllPlugInTester_LDFLAGS = $(LIBADD_DL)
 DllPlugInTesterTest_SOURCES = DllPlugInTesterTest.cpp \
@@ -246,7 +246,7 @@ DllPlugInTesterTest_SOURCES = DllPlugInTesterTest.cpp \
 	CommandLineParserTest.h
 
 DllPlugInTesterTest_LDADD = \
-  $(top_builddir)/src/cppunit/libcppunit.la
+  $(top_builddir)/src/cppunit/libcppunit.la -ldl
 
 DllPlugInTesterTest_LDFLAGS = $(LIBADD_DL)
 all: all-am

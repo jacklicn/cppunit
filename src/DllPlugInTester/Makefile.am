@@ -23,6 +23,6 @@ DllPlugInTesterTest_SOURCES = DllPlugInTesterTest.cpp \
 	CommandLineParserTest.h
 
 DllPlugInTesterTest_LDADD= \
-  $(top_builddir)/src/cppunit/libcppunit.la
+  $(top_builddir)/src/cppunit/libcppunit.la -ldl
 
 DllPlugInTesterTest_LDFLAGS = $(LIBADD_DL)
